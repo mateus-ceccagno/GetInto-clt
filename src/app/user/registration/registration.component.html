@@ -1,0 +1,96 @@
+<div class="row mt-4 text-white vh-100">
+	<div class="col-md-6">
+    <h1 class="mb-4">Cadastro de Usuário</h1>
+    <form [formGroup]="form" class="px-4" (ngSubmit)="register()">
+      <div class="pb-2 d-block d-md-none">
+        <h3 class="border-bottom">Cadastro de Usuário</h3>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-sm-7 mb-2">
+          <label for="">E-mail:</label>
+          <input class="form-control" type="text" formControlName="email"
+            [ngClass]="{'is-invalid': f.email.errors && f.email.touched}" placeholder="Entre com um E-mail válido" />
+          <div *ngIf="f.email.errors?.required && f.email.touched" class="invalid-feedback">
+            E-mail é obrigatório.
+          </div>
+          <div *ngIf="f.email.errors?.email && f.email.touched" class="invalid-feedback">
+            Deve ser um e-mail válido.
+          </div>
+        </div>
+        <div class="form-group col-sm-7 mb-2">
+          <label for="">Usuario:</label>
+          <input class="form-control" type="text" formControlName="userName"
+            [ngClass]="{'is-invalid': f.userName.errors && f.userName.touched}" placeholder="Crie um Nome de Usuário" />
+          <div class="invalid-feedback">
+            Usuário é obrigatório.
+          </div>
+        </div>
+        <div class="form-group col-sm-7 mb-2">
+          <label>Nome</label>
+          <input type="text" class="form-control" formControlName="firstName"
+            [ngClass]="{'is-invalid': f.firstName.errors && f.firstName.touched}" placeholder="Digite seu Nome" />
+          <div class="invalid-feedback">
+            Nome é obrigatório.
+          </div>
+        </div>
+        <div class="form-group col-sm-7 mb-2">
+          <label>Sobrenome</label>
+          <input type="text" class="form-control" formControlName="lastName"
+            [ngClass]="{'is-invalid': f.lastName.errors && f.lastName.touched}" placeholder="Digite seu Sobrenome" />
+          <div class="invalid-feedback">
+            Sobrenome é obrigatório.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-sm-7 mb-2">
+          <label for="">Senha:</label>
+          <input class="form-control" type="password" formControlName="password"
+            [ngClass]="{'is-invalid': f.password.errors && f.password.touched}" placeholder="Digite uma Senha" />
+          <div *ngIf="f.password.errors?.required && f.password.touched"
+          class="invalid-feedback">
+            Senha é obrigatório.
+          </div>
+          <div *ngIf="f.password.errors?.minlength && f.password.touched"
+          class="invalid-feedback">
+            Deve conter no mínimo 6 caracteres.
+          </div>
+        </div>
+        <div class="form-group col-sm-7 mb-2">
+          <label for="">Confirmar Senha:</label>
+          <input class="form-control" type="password" formControlName="confirmePassword"
+            [ngClass]="{'is-invalid': f.confirmePassword.errors && f.confirmePassword.touched}" placeholder="Confirme a Senha" />
+          <div *ngIf="f.confirmePassword.errors?.required"
+            class="invalid-feedback">
+            Confirmar Senha é obrigatório.
+          </div>
+          <div *ngIf="f.confirmePassword.errors?.mustMatch"
+            class="invalid-feedback">
+            Repedir a senha é obrigatório.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row ml-4 mt-4">
+        <div class="form-group col-sm-7">
+          <button [disabled]="!form.valid" class="btn btn-lg btn-outline-primary btn-block px-5 col-sm-12" type="submit">
+            Registrar
+          </button>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-12 mt-1">
+          <p class="btn btn-block text-white col-7" routerLink="/user/login">
+            <u>Já possuo cadasto</u>
+          </p>
+        </div>
+      </div>
+    </form>
+
+	</div>
+
+  <div class="col-md-6 mt-5 side-heder align-items-center">
+    <img src="./../../../assets/formView.png" alt="Imagem Ilustrativa" width="420px">
+  </div>
+</div>

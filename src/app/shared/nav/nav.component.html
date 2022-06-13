@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
+    <ul class="navbar-nav me-auto">
     <a class="navbar-brand" routerLink="home">
       <i class="fa-solid fa-circle-nodes"></i>
     </a>
@@ -8,7 +9,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" [collapse]="isCollapsed" [isAnimated]="true" id="navbarNav">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav">
         <ng-container>
           <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" aria-current="page" routerLink="">Notícias</a>
@@ -39,12 +40,11 @@
           </div>
         </li>
       </ul>
-
-      <div class="navbar-nav">
-        <button class="btn btn-primary text-right mr-3" routerLink="user/login">Entrar</button>
-        <button class="btn btn-outline-primary menu-right" routerLink="user/login">Cadastrar</button>
-      </div>
-
     </div>
+    </ul>
+      <div class="d-flex">
+        <button class="btn btn-outline-success me-sm-1" routerLink="user/login">Entrar</button>&nbsp;&nbsp;
+        <button class="btn btn-outline-primary" routerLink="user/registration">Cadastrar</button>
+      </div>
   </div>
 </nav>
