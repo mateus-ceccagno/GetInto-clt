@@ -3,6 +3,7 @@ import { UserLogin } from './../../models/identity/UserLogin';
 import { AccountService } from './../../services/account.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -11,11 +12,13 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
   model = {} as UserLogin;
+  title = 'angular-phrase-example';
 
   constructor(
     private accountService: AccountService,
     private router: Router,
-    private toaster: ToastrService
+    private toaster: ToastrService,
+    private translateService: TranslateService
   ) {}
 
   ngOnInit(): void {}
@@ -31,5 +34,9 @@ export class LoginComponent implements OnInit {
         else console.error(error);
       }
     );
+  }
+
+  public selectLanguage(event: any) {
+    this.translateService.use(event.target.value);
   }
 }
