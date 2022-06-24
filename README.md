@@ -1,27 +1,28 @@
-# GetIntoApp
+# GetInto Client
+Software para alocação de pessoas aos projetos internos de uma empresa.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+<br>
 
-## Development server
+## Requisito
+A API desse projeto se encontra em @mateus-ceccagno/[GetInto-srv](https://github.com/mateus-ceccagno/GetInto-srv).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<br>
 
-## Code scaffolding
+## Motivação
+O software surge para que administradores cadastrem novos projetos e vagas. Outros colaboradores poderão demonstrar interesse nas vagas disponíveis.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<br>
 
-## Build
+## Dependências essenciais
+[Angular CLI](https://github.com/angular/angular-cli) versão 14.0.0 <br>
+[Angular JWT](https://github.com/auth0/angular-jwt) versão 5.0.2<br>
+[Bootswatch](https://bootswatch.com/) versão 5.1.3 <br>
+[Bootstrap](https://getbootstrap.com/) versão 5.1.3<br>
+<br>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Servidor desenvolvimento
 
-## Running unit tests
+Execute `ng serve` para servidor de desenvolvimento. Navegue até `http://localhost:4200/`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<br>
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
