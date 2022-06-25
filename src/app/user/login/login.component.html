@@ -10,9 +10,6 @@
 <div class="d-flex align-items-center vh-100 text-white">
   <div class="mx-auto text-center shadow-sm p-5">
     <form #loginForm="ngForm" class="form-signin" (ngSubmit)="login()">
-
-
-
       <i class="fa-solid fa-user mb-4"></i>
       <h2 class="mb-4">
         {{ "Olá, Colaborador!" | translate }}
@@ -42,9 +39,9 @@
         required
       />
       <button
-        [disabled]="loginForm.invalid"
+        type="submit"
         class="btn btn-lg btn-primary"
-        type="button"
+        [disabled]="loginForm.invalid"
       >
         {{ "Entrar" | translate }}
       </button>

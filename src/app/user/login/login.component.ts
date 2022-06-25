@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   public login(): void {
     this.accountService.login(this.model).subscribe(
       () => {
-        this.router.navigateByUrl('/project');
+        this.router.navigateByUrl('');
       },
       (error: any) => {
         if (error.status == 401)
