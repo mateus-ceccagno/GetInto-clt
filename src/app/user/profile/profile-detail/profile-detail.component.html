@@ -1,0 +1,139 @@
+<form [formGroup]="form" (submit)="onSubmit()" class="text-white">
+  <div class="form-row">
+    <div class="form-group col-12">
+      <h3 class="border-bottom">Detalhes de Perfil</h3>
+    </div>
+
+    <div class="form-group col-sm-4">
+      <label>Nome</label>
+      <input
+        type="text"
+        formControlName="firstName"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': f.firstName.errors && f.firstName.touched
+        }"
+      />
+      <div
+        *ngIf="f.firstName.errors && f.firstName.touched"
+        class="invalid-feedback"
+      >
+        <div *ngIf="f.firstName.errors.required">
+          Nome é obrigatório
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-sm-4">
+      <label>Sobrenome</label>
+      <input
+        type="text"
+        formControlName="lastName"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': f.lastName.errors && f.lastName.touched
+        }"
+      />
+      <div
+        *ngIf="f.lastName.errors && f.lastName.touched"
+        class="invalid-feedback"
+      >
+        <div *ngIf="f.lastName.errors.required">
+          Sobrenome é obrigatório
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-sm-4">
+      <label>E-mail</label>
+      <input
+        type="text"
+        formControlName="email"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': f.email.errors && f.email.touched }"
+      />
+      <div *ngIf="f.email.errors && f.email.touched" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">E-mail é obrigatório</div>
+        <div *ngIf="f.email.errors.email">
+          E-mail precisa válido.
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-sm-4">
+      <label>Telefone</label>
+      <input
+        type="text"
+        formControlName="phoneNumber"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': f.phoneNumber.errors && f.phoneNumber.touched
+        }"
+      />
+      <div
+        *ngIf="f.phoneNumber.errors && f.phoneNumber.touched"
+        class="invalid-feedback"
+      >
+        <div *ngIf="f.phoneNumber.errors.required">Telefone é obrigatório</div>
+      </div>
+    </div>
+
+  </div>
+  <div>
+    <h3 class="pt-4">Alterar Senha</h3>
+    <p class="col-sm-4">Para alterar sua senha, preencha os campos</p>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-sm-4">
+      <label>Senha</label>
+      <input
+        type="password"
+        formControlName="password"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': f.password.errors && f.password.touched }"
+      />
+      <div
+        *ngIf="f.password.errors && f.password.touched"
+        class="invalid-feedback"
+      >
+        <div *ngIf="f.password.errors.required">Senha é obrigatória</div>
+        <div *ngIf="f.password.errors.minlength">
+          Senha precisa ter pelo menos 6 caracteres
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-sm-4">
+      <label>Confirmar Senha</label>
+      <input
+        type="password"
+        formControlName="passwordConfirmation"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': f.passwordConfirmation.errors && f.passwordConfirmation.touched
+        }"
+      />
+      <div
+        *ngIf="f.passwordConfirmation.errors && f.passwordConfirmation.touched"
+        class="invalid-feedback"
+      >
+        <div *ngIf="f.passwordConfirmation.errors.required">
+          Confirmação de senha é Obrigatório
+        </div>
+        <div *ngIf="f.passwordConfirmation.errors.mustMatch">
+          A confirmação deve ser igual a senha
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="mt-4">
+      <button
+        (click)="resetForm($event)"
+        class="btn btn-outline-secondary"
+      >
+        Cancelar
+      </button>&nbsp;&nbsp;
+      <button class="btn btn-outline-success" type="submit">Salvar</button>
+
+  </footer>
+
+</form>

@@ -17,10 +17,13 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ToastrModule } from 'ngx-toastr';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegistrationComponent } from './user/registration/registration.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { ProfileDetailComponent } from './user/profile/profile-detail/profile-detail.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -34,6 +37,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TitleComponent,
     UserComponent,
     RegistrationComponent,
+    ProfileComponent,
+    ProfileDetailComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -44,6 +49,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
+    TabsModule.forRoot(),
     TranslateModule.forRoot({
       defaultLanguage: 'pt-BR',
       loader: {

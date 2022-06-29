@@ -1,0 +1,37 @@
+<app-title [title]="'Profile'" [iconClass]="'fa fa-address-card'"></app-title>
+
+<div class="card rounded shadow-sm">
+  <div class="row p-3">
+    <div class="col-lg-3 pt-1">
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="h4 text-center mb-3">@{{ user.userName }}</div>
+          <div class="h7 text-bold pb-1">
+            <b>Nome:</b> {{ user.firstName + " " + user.lastName }}
+          </div>
+          <div class="h7">
+            {{ user.description }}
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-6 text-center border-right">
+                <div class="h5">0</div>
+                <div class="h6 text-muted">Meus Projetos</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="card-footer"></div>
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <tabset>
+        <tab class="border px-4">
+          <app-profile-detail (changeFormValue)="setFormValue($event)"></app-profile-detail>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</div>
