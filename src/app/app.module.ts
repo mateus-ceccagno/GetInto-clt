@@ -19,11 +19,12 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
-import { UserComponent } from './user/user.component';
-import { LoginComponent } from './user/login/login.component';
-import { RegistrationComponent } from './user/registration/registration.component';
-import { ProfileComponent } from './user/profile/profile.component';
-import { ProfileDetailComponent } from './user/profile/profile-detail/profile-detail.component';
+import { UserComponent } from './components/user/user.component';
+
+import { RegistrationComponent } from './components/user/registration/registration.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+import { ProfileDetailComponent } from './components/user/profile/profile-detail/profile-detail.component';
+import { LoginComponent } from './components/user/login/login.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');

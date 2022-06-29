@@ -1,10 +1,11 @@
-import { ProfileComponent } from './user/profile/profile.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './user/login/login.component';
-import { RegistrationComponent } from './user/registration/registration.component';
+
+import { RegistrationComponent } from './components/user/registration/registration.component';
 import { AuthGuard } from './guard/auth.guard';
-import { UserComponent } from './user/user.component';
+import { UserComponent } from './components/user/user.component';
+import { LoginComponent } from './components/user/login/login.component';
 const routes: Routes = [
   {
     path: '',

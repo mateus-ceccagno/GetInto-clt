@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserLogin } from './../../models/identity/UserLogin';
-import { AccountService } from './../../services/account.service';
+import { UserLogin } from '../../../models/identity/UserLogin';
+import { AccountService } from '../../../services/account.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
